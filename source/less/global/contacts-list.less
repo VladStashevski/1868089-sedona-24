@@ -1,0 +1,153 @@
+.contacts-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 28px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 35px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 51px;
+  }
+}
+
+.contacts-list__item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &--phone,
+  &--mail {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      right: 0;
+      bottom: 0;
+      width: 58px;
+      height: 58px;
+      background-color: @sub-gray-dark;
+      background-repeat: no-repeat;
+      background-size: 18px 18px;
+      background-position: center center;
+
+      @media (min-width: @desktop-width) {
+        bottom: auto;
+      }
+    }
+  }
+
+  &--phone {
+    &::before {
+      background-image: url("../img/icon-phone.svg");
+    }
+  }
+
+  &--mail {
+    &::before {
+      background-image: url("../img/icon-mail.svg");
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    flex-direction: column;
+  }
+
+  @media (min-width: @desktop-width) {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+
+    &--phone {
+      &::before {
+        right: 80px;
+      }
+    }
+  }
+}
+
+.contacts-list__label {
+  width: 100%;
+  padding-left: 22px;
+  padding-right: 0;
+  padding-bottom: 6px;
+  .slim-text();
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: @sub-black;
+
+  &--mail {
+    padding-top: 12px;
+  }
+
+  @media (min-width: @tablet-width) {
+    &--phone {
+      padding-bottom: 10px;
+    }
+
+    &--mail {
+      padding-top: 22px;
+      padding-bottom: 8px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    width: auto;
+    padding: 0;
+
+    &--phone {
+      max-width: 75px;
+    }
+
+    &--mail {
+      max-width: 150px;
+    }
+
+    & span {
+      display: none;
+    }
+  }
+}
+
+.contacts-list__input {
+  width: 100%;
+  min-height: 58px;
+  margin-right: 58px;
+  padding: 12px 18px;
+  .fat-text();
+  font-size: 18px;
+  line-height: 26px;
+  color: @black-base;
+  background-color: @sub-white;
+  border: 4px solid @sub-white;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: @black-base;
+  }
+
+  &:hover {
+    background-color: @gray-base--disabled;
+    border-color: @gray-base--disabled;
+  }
+
+  &:focus {
+    background-color: @white-base;
+    border: 4px solid @gray-base--disabled;
+    outline: none;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 270px;
+    margin-left: 17px;
+    margin-right: 0;
+  }
+}

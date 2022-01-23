@@ -1,0 +1,37 @@
+.page-footer {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: @white-base;
+
+  @media (max-width: @tablet-width - 1) {
+    grid-template-rows: 85px 1fr 76px;
+    min-height: 233px;
+  }
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 120px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-column-gap: 40px;
+  }
+}
+
+.page-footer__hashtag {
+  margin: auto 0;
+}
+
+.page-footer__socials {
+  margin-top: 4px;
+
+  @media (min-width: @tablet-width) {
+    margin: auto 0;
+  }
+}
+
+.page-footer__designers {
+  margin: auto 0;
+}

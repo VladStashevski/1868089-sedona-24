@@ -1,0 +1,36 @@
+.info-contacts {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.info-contacts__title {
+  .fat-text();
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: @black-base;
+
+  @media (min-width: @tablet-width) {
+    width: 400px;
+    font-size: 21px;
+
+    &::before {
+      left: -124px;
+    }
+
+    &::after {
+      right: -124px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &::before {
+      left: -280px;
+    }
+
+    &::after {
+      right: -280px;
+    }
+  }
+}

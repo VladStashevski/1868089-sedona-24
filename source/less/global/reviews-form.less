@@ -1,0 +1,61 @@
+.reviews-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reviews-form__fieldset {
+  width: 100%;
+}
+
+.reviews-form__legend {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -20px;
+    right: -20px;
+    height: 1px;
+    background-color: @gray-base--disabled;
+  }
+
+  @media (min-width: @tablet-width) {
+    &::before {
+      top: 30px;
+      left: 0;
+      right: auto;
+      width: 124px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 30px;
+      left: auto;
+      right: 0;
+      width: 124px;
+      height: 1px;
+      background-color: @gray-base--disabled;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &::before,
+    &::after {
+      width: 280px;
+    }
+  }
+}
+
+.reviews-form__button {
+  width: 100%;
+  padding: 0;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

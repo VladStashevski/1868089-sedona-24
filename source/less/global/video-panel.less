@@ -1,0 +1,104 @@
+.video-panel {
+  background-color: @sub-white;
+
+  @media (min-width: @tablet-width) {
+    background-color: inherit;
+  }
+}
+
+.video-panel__scale {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background-color: fade(@black-base, 60%);
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 22px;
+    left: 22px;
+    right: 23px;
+    height: 3px;
+    background-color: fade(@white-base, 20%);
+  }
+
+  @media (min-width: @tablet-width) {
+    top: auto;
+    bottom: 0;
+    height: 93px;
+
+    &::before {
+      top: 45px;
+      left: 93px;
+      right: 166px;
+    }
+  }
+}
+
+.video-panel__button {
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  mix-blend-mode: normal;
+  background-color: inherit;
+  z-index: 2;
+  cursor: pointer;
+
+  &--volume {
+    display: block;
+    width: 9px;
+    height: 9px;
+    margin-top: 18px;
+    margin-left: 58px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: @white-base;
+
+    @media (min-width: @tablet-width) {
+      margin-top: 41px;
+      margin-left: 206px;
+    }
+  }
+
+  &--subtitles {
+    margin-left: auto;
+    margin-right: 31px;
+  }
+
+  & svg {
+    fill: @gray-button;
+    opacity: 1;
+
+    @media (min-width: @tablet-width) {
+      fill: @white-base;
+      opacity: 1;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    & svg {
+      fill: @sub-black;
+      opacity: 1;
+
+      @media (min-width: @tablet-width) {
+        fill: @white-base;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &:active {
+    & svg {
+      fill: @sub-black;
+      opacity: 0.3;
+
+      @media (min-width: @tablet-width) {
+        fill: @white-base;
+        opacity: 0.3;
+      }
+    }
+  }
+}

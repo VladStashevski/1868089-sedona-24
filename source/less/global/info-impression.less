@@ -1,0 +1,36 @@
+.info-impression {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  @media (min-width: @tablet-width) {
+    width: 50%;
+    order: -1;
+  }
+}
+
+.info-impression__title {
+  .fat-text();
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: @black-base;
+
+  @media (min-width: @tablet-width) {
+    width: auto;
+    padding-top: 0;
+    font-size: 21px;
+    text-align: left;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 7px;
+    padding-top: 0;
+    padding-left: 79px;
+  }
+}

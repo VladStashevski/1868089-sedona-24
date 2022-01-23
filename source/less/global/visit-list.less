@@ -1,0 +1,113 @@
+.visit-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-top: 7px;
+  margin-bottom: 25px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+
+  @media (min-width: @tablet-width) {
+    margin-top: 14px;
+    margin-left: 95px;
+    margin-right: 35px;
+    margin-bottom: 34px;
+  }
+
+  @media (min-width: @desktop-width) {
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.visit-list__item {
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 15px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 50%;
+    margin-bottom: 0;
+    padding: 31px 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: auto;
+  }
+}
+
+.visit-list__label {
+  position: relative;
+  display: inline-block;
+  padding-left: 79px;
+  .fat-text();
+  font-size: 18px;
+  line-height: 26px;
+  color: @black-base;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -16px;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 5px;
+    border: 5px solid @sub-white;
+    background-color: @sub-white;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 3px;
+    left: 17px;
+    width: 21px;
+    height: 12px;
+    background-color: inherit;
+    transform: rotate(-45deg);
+    border-left: 3px solid @sub-black;
+    border-bottom: 3px solid @sub-black;
+    box-sizing: border-box;
+  }
+
+  &:hover::before {
+    border-color: @gray-base--disabled;
+    background-color: @gray-base--disabled;
+  }
+
+  &:active {
+    &::before {
+      border-color: @gray-border-light;
+      background-color: @gray-border-light;
+    }
+
+    &::after {
+      opacity: 0.3;
+    }
+  }
+}
+
+
+.visit-list__input {
+  & + .visit-list__label::after {
+    display: none;
+  }
+
+  &:checked + .visit-list__label::after {
+    display: block;
+  }
+
+  &:focus ~ .visit-list__label::before,
+  &:checked:focus ~ .visit-list__label::before {
+    border-color: @gray-base--disabled;
+    background-color: @white-base;
+  }
+}

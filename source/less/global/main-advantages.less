@@ -1,0 +1,122 @@
+.main-advantages {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: @blue-base;
+}
+
+.main-advantages__wrapper {
+  padding: 0 20px;
+  padding-top: 39px;
+  padding-bottom: 35px;
+  box-sizing: border-box;
+  background-color: inherit;
+
+  @media (max-width: @tablet-width - 1) {
+    &--first {
+      position: relative;
+      padding-top: 72px;
+      padding-bottom: 37px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 37px;
+        background-image: url("../img/bg-advantages-triangle.svg");
+        background-repeat: no-repeat;
+        background-position: center top;
+      }
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 256px;
+    padding: 0 32px;
+    padding-top: 40px;
+    padding-bottom: 34px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 400px;
+    padding-top: 47px;
+    padding-bottom: 27px;
+  }
+}
+
+.main-advantages__title {
+  margin: 0;
+  padding: 0 21px;
+  .fat-text();
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: @white-base;
+  background-color: inherit;
+
+  @media (min-width: @tablet-width) {
+    font-size: 21px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0 60px;
+  }
+}
+
+.main-advantages__number,
+.main-advantages__text {
+  margin: 0;
+  padding: 0 5px;
+  .slim-text();
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: @white-base;
+  background-color: inherit;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0 30px;
+  }
+}
+
+.main-advantages__number {
+  margin-top: 11px;
+  margin-bottom: 17px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 27px;
+  }
+}
+
+.main-advantages__image {
+  & img {
+    display: block;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 512px;
+
+    &--order {
+      order: -1;
+    }
+
+    & img {
+      width: 512px;
+      height: 256px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 800px;
+
+    & img {
+      width: 800px;
+      height: 256px;
+    }
+  }
+}

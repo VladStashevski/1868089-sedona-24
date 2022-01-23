@@ -1,0 +1,51 @@
+.photo {
+  background-color: inherit;
+}
+
+.photo__link {
+  & img {
+    display: block;
+  }
+
+  @media (min-width: @tablet-width) {
+    & img {
+      width: 324px;
+      height: 267px;
+    }
+
+    &--first {
+      & img {
+        width: 648px;
+        height: 400px;
+      }
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    & img {
+      width: 400px;
+      height: 267px;
+    }
+
+    &--first {
+      & img {
+        width: 1200px;
+        height: 400px;
+      }
+    }
+  }
+}
+
+.photo__info {
+  @media (min-width: @desktop-width) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    box-sizing: border-box;
+
+    &--first {
+      width: 1200px;
+    }
+  }
+}

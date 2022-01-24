@@ -43,3 +43,34 @@ const watcher = () => {
 export default gulp.series(
   styles, server, watcher
 );
+
+// Images
+
+const optimizeImages = () => {
+  return gulp.src("source/img/**/*.{jpg,png}")
+    .pipe(squoosh())
+    .pipe(gulp.dest("build/img"));
+}
+
+const copyImages = () => {
+  return gulp.src("source/img/**/*.{jpg,png}")
+    .pipe(gulp.dest("build/img"));
+}
+
+// SVG
+
+const svg = () => {
+  return gulp.src(["source/img/**/*.svg", "!source/img/logo-*.svg", "!source/img/button-*.svg", "!source/img/intro-*.svg"])
+    .pipe(svgo())
+    .pipe(gulp.dest("build/img"));
+}
+
+const sprite = () => {
+  return gulp.src(["source/img/logo-*.svg", "source/img/button-*.svg", "source/img/intro-*.svg"])
+    .pipe(svgo())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img"));
+}

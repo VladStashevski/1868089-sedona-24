@@ -16,24 +16,24 @@ import browser from "browser-sync";
 // Styles
 
 export const styles = () => {
-  return gulp.src("source/less/style.less", { sourcemaps: true })
+  return gulp.src('source/less/style.less', { sourcemaps: true })
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss([
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("build/css", { sourcemaps: "." }))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
+
 
 // HTML
 
 const html = () => {
-  return gulp.src("source/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("build"));
+  return gulp.src('source/*.html')
+    .pipe(gulp.dest('build'));
 }
 
 // Scripts
@@ -70,13 +70,13 @@ const createWebp = () => {
 // SVG
 
 const svg = () => {
-  return gulp.src(["source/img/**/*.svg", "!source/img/logo-*.svg", "!source/img/button-*.svg", "!source/img/intro-*.svg"])
+  return gulp.src(["source/img/**/*.svg"])
     .pipe(svgo())
     .pipe(gulp.dest("build/img"));
 }
 
 const sprite = () => {
-  return gulp.src(["source/img/logo-*.svg", "source/img/button-*.svg", "source/img/intro-*.svg"])
+  return gulp.src(["source/img/logo-*.svg",])
     .pipe(svgo())
     .pipe(svgstore({
       inlineSvg: true
